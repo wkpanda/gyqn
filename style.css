@@ -1,0 +1,209 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body, html, main {
+    /* important */
+    height: 100%;
+   }
+  header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 50px;
+    background-color: rgb(0, 0, 0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 10px 5px 0 rgba(0, 0, 0, 0.2)； 阴影 */
+  }
+   #menu{
+     position: fixed; /*ie6不支持*/
+     /* top: 100px; */
+     top:0;
+     /* right:200px; */
+     /* width: 80px; */
+     width: 240px;
+     right: 0px;
+     left: 0px;
+     margin: auto;
+     
+   }
+  #menu ul{
+    display: inline;
+    list-style: none;
+  }
+  #menu ul li{
+    float: left;
+  }
+   #menu ul li a {
+     display: block;
+     /* margin: 5px 0; */
+     margin: 0%;
+     font-size: 14px;
+     color: rgb(150, 150, 150);
+     width: 80px;
+     height: 50px;
+     line-height: 50px;
+     text-decoration: none;
+     text-align: center;
+     
+   }
+
+   #menu ul li a:hover,
+   #menu ul li a.current{
+     color: aliceblue;
+     background-color: rgb(0, 0, 0,0.2);  /*半透明*/
+   }
+
+   * html ,*html body{
+     background-image: url(about:blank);
+     background-attachment: fixed;
+   }
+   /* ie6 hack
+   * html #menu{
+     position: absolute;
+     top:expression(((e = document.documentElement.scrollTop)?e:document.body.scrollTop)+100+'px');
+   } */
+   .cd-fixed-bg {
+    min-height: 100%;
+    top:0;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+   }
+    
+   .cd-fixed-bg.cd-bg-1 {
+    background-image: url("image/1.jpg");
+   }
+   .cd-fixed-bg.cd-bg-2 {
+    background-image: url("image/2.jpg");
+   }
+   .cd-fixed-bg.cd-bg-3 {
+    background-image: url("image/3.jpg");
+   }
+   .cd-fixed-bg.cd-bg-4 {
+    background-image: url("image/4.jpg");
+   }
+    
+   .cd-scrolling-bg {
+    min-height: 100%;
+   }
+
+
+   #item2{
+     /* height: auto;
+     overflow: hidden;
+     display: flex; */
+     height: 100%;
+   }
+   /*项目简介*/
+   #pros{
+     margin: 0%;
+     width: 100%;
+     /* min-height: 100%; */
+     height: 100%;
+     /* background-repeat: no-repeat; */
+     list-style: none;
+   }
+   /* .des::before{
+    content: '';
+    background-color: transparent;
+    background-image:
+        radial-gradient(circle at 20% 80%, transparent 29%, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0.4) 33%, transparent 34%),
+        radial-gradient(circle at 80% 20%, transparent 29%, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0.4) 33%, transparent 34%);
+    background-size: 30px 30px;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: all 0.3s ease 0.2s;
+   } */
+   .des:hover{ box-shadow: 0 0 15px -5px #000; }
+   .des{
+    /* background-repeat: no-repeat; */
+    background-size: cover; /*背景填充满*/
+     float: left;
+     width: 25%;
+     height: 100%;
+     /* clip-path: inset(10px 20px 30px 40px); */
+   }
+
+   .pros ul li:hover .mask{
+    opacity: 1;
+   }
+   .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 531px;
+    height: 354px;
+    background: rgba(101, 101, 101, 0.6);
+    color: #ffffff;
+    opacity: 0;
+}
+.mask h3 {
+    text-align: center;
+}
+.des img{
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease 0s;
+}
+.des img:hover{
+  filter:blur(2px);   /*模糊*/
+}
+.des .des-content{
+  color: #fff;
+  background-color: rgba(0,0,0,0.6);
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 18% 0 0 0;
+  position: relative;
+  left: 0;
+  top: -100%;
+  z-index: 5;
+  transition: all 0.3s ease 0s;
+  opacity: 0;
+}
+.des:hover .des-content{ top: -100%;opacity: 1; }
+
+.des-content .title{
+  color: #fff;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+   #pro1 a{
+     background-image: url("image/des/图片1.png");
+   }
+   #pro2 a{
+    background-image: url("image/des/2.jpg");
+  }
+  #pro3 a{
+    background-image: url("image/des/3.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+  }
+  #pro4 a{
+    background-image: url("image/des/4.jpg");
+  }
+.fw-blockquote {
+  background-color: var(--color-contrast-lower);
+  text-align: center; }
+
+.fw-blockquote__footer::before {
+  content: '\2014';
+  margin-right: var(--space-xxxs); }
+
+.fw-blockquote__bg-icon {
+  width: 4em;
+  height: 4em;
+  color: var(--color-contrast-low); }
+
+/*# sourceMappingURL=style.css.map */

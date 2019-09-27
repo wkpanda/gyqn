@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0%;
+        margin: 0%;
+    }
+    html,body{
+        height: 100%;
+        /* overflow: hidden; */
+    }
+    #container,.sections,.section{
+        height: 100%;
+    }
+    #section0,
+    #section1,
+    #section2,
+    #section3{
+        background-color: #000;
+        background-size: cover;
+        background-position: 50% 50%;
+        text-align: center;
+        color: white;
+    }
+    #section0{
+        background-image: url(image/1.jpg);
+        background-attachment: fixed;
+    }
+    #section1{
+        background-image: url(image/2.jpg);
+    }
+    #section2{
+        background-image: url(image/3.jpg);
+    }
+    #section3{
+        background-image: url(image/4.jpg)
+    }
+    .left{
+        float: left;
+        width: 25%;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="container" style="width:400%;">
+        <div class="sections">
+            <div class="section left" id="section0">
+                <h3>this is the page 0</h3>
+            </div>
+            <div class="section left" id="section1">
+                <h3>this is the page 1</h3>
+            </div>
+            <div class="section left" id="section2">
+                <h3>this is the page 2</h3>
+            </div>
+            <div class="section left" id="section3">
+                <h3>this is the page 3</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

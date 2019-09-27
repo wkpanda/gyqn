@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="navgation.js"></script>
+
+
+<body>
+
+    <header>
+        <div id="menu">
+            <ul>
+                <li><a href="#item1" class="current">主页</a></li>
+                <li><a href="#item2">项目简介</a></li>
+                <li><a href="#item3">项目详情</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="content">
+        <div class="cd-fixed-bg cd-bg-1 item" id="item1">
+
+        </div>
+
+        <div class="cd-scrolling-bg cd-color-1 item" id="item2">
+            <!-- <blockquote class="fw-blockquote padding-y-xxl">
+                <div class="container max-width-sm">
+                  <svg class="fw-blockquote__bg-icon" aria-hidden="true" viewBox="0 0 64 64"><polygon fill="currentColor" points="2 36 17 2 26 2 15 36 26 36 26 62 2 62 2 36"/><polygon fill="currentColor" points="38 36 53 2 62 2 51 36 62 36 62 62 38 62 38 36"/></svg>
+                  <div class="text-component margin-top-lg">
+                    <p class="text-xl">Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.</p>
+                  </div>
+                  <footer class="fw-blockquote__footer margin-top-lg">Steve Jobs</footer>
+                </div>
+              </blockquote> -->
+            <ul id="pros">
+                <li class="des" id="des1">
+                    <img src="image/des/图片1.png">
+                    <div class="des-content" id="des-content1" v-on:mouseover="changeBack">
+                        <h2 class="title">绿色电力</h2>
+                        <p>{{ info }}</p>
+                    </div>
+                    <a href="" id="pro1">
+                    </a>
+                </li>
+                <li class="des">
+                    <img src="image/des/2.jpg" alt="">
+                    <div class="des-content">
+                        <h2 class="title">绿色鱼塘</h2>
+                        <p>{{info2}}</p>
+                    </div>
+                    <a href="" id="pro2"></a>
+                </li>
+                <li class="des">
+                    <img src="image/des/3.jpg" alt="">
+                    <div class="des-content">
+                        <h2 class="title">芦苇花开</h2>
+                        <p>{{info3}}</p>
+                    </div>
+                    <a href="" id="pro3"></a>
+                </li>
+                <li class="des">
+                    <img src="image/des/4.jpg" alt="">
+                    <div class="des-content">
+                        <h2 class="title">出柿入市</h2>
+                        <p>{{info4}}</p>
+                    </div>
+                    <a href="" id="pro4"></a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="cd-fixed-bg cd-bg-2 item" id="information1" v-bind:style="styleObject">
+            
+        </div>
+
+        <div class="cd-scrolling-bg cd-color-2 item" id="information2">
+            <div class="cd-container">
+                <h1>content</h1>
+                <p>
+                    内容...
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="cd-fixed-bg cd-bg-3"></div>
+        <div class="cd-fixed-bg cd-bg-4"></div>
+        <script>
+            let info1 = "绿色电力", info2 = "绿色鱼塘", info3 = "芦苇花开", info4 = "出柿入市";
+            
+            // var infoStyleObject = { backgroundImage: "image/1.jpg" }
+            var infoStyleObject = { backgroundImage:'url(\'image/1.jpg\')'}
+            // let li1 = new Vue({
+            //     el: '#item2',
+            //     methods: {
+            //         changeBack: function (event) {
+            //             infoStyleObject = { backgroundImage: "image/info/2.jpeg" }
+            //             alert('onmouseover')
+            //         }
+            //     }
+            // })
+            //li1.changeBack()
+            let briInfo = new Vue({
+                el: '#item2',
+                data: {
+                    info: info1,
+                    info2: info2,
+                    info3: info3,
+                    info4: info4
+                },
+                methods:{
+                    changeBack: function (event) {
+                        infoStyleObject = { backgroundImage: "url('/info/2.jpeg')" }
+                        //alert('onmouseover')image
+                    }
+                }
+            })
+            let information1 = new Vue({
+                el: "#information1",
+                data: {
+                    styleObject: infoStyleObject
+                }
+            })
+        </script>
+</body>
+
+</html>
