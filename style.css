@@ -25,6 +25,7 @@ body, html, main {
      right: 0px;
      left: 0px;
      margin: auto;
+     z-index: 6;
      
    }
   #menu ul{
@@ -192,6 +193,13 @@ body, html, main {
   }
   #pro4 a{
     background-image: url("image/des/4.jpg");
+  }
+
+.cons{
+        font-size: 20px;
+        width: 80%;
+        font-family:"微软雅黑";
+        margin: 0 auto;
   }
 .fw-blockquote {
   background-color: var(--color-contrast-lower);

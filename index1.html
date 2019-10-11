@@ -47,35 +47,36 @@
               </blockquote> -->
             <ul id="pros">
                 <li class="des" id="des1">
-                    <img src="image/des/图片1.png">
-                    <div class="des-content" id="des-content1" v-on:mouseover="changeBack">
+                    <img src="image/des/1.png">
+                    <div class="des-content" id="des-content1"  onmouseover="changeBackground('1.jpg')">
                         <h2 class="title">绿色电力</h2>
-                        <p>{{ info }}</p>
+                        <!-- <p>{{ info }}</p> -->
                     </div>
-                    <a href="" id="pro1">
-                    </a>
                 </li>
                 <li class="des">
                     <img src="image/des/2.jpg" alt="">
-                    <div class="des-content">
+                    <div class="des-content"onmouseover="changeBackground('2.jpg')" >
                         <h2 class="title">绿色鱼塘</h2>
-                        <p>{{info2}}</p>
+                        <p class="cons">团队于白洋淀附近鱼塘发现鱼苗、饲料和鱼塘成本不断升高，经过广泛调研后，项目组研发了一款环保高效节能的鱼塘曝气装置......</p>
+                        <!-- <p>{{ info2 }}</p> -->
                     </div>
                     <a href="" id="pro2"></a>
                 </li>
                 <li class="des">
                     <img src="image/des/3.jpg" alt="">
-                    <div class="des-content">
+                    <div class="des-content" onmouseover="changeBackground('3.jpg')">
                         <h2 class="title">芦苇花开</h2>
-                        <p>{{info3}}</p>
+                        <p class="cons">近年来，由于廉价塑料代替品的出现，芦苇产业日益萎缩，无人看管的芦苇造成资源浪费和环境污染。团队利用芦苇制成苇塑......</p>
+                        <!-- <p>{{ info3 }}</p> -->
                     </div>
                     <a href="" id="pro3"></a>
                 </li>
                 <li class="des">
                     <img src="image/des/4.jpg" alt="">
-                    <div class="des-content">
+                    <div class="des-content" onmouseover="changeBackground('4.jpg')">
                         <h2 class="title">出柿入市</h2>
-                        <p>{{info4}}</p>
+                        <p class="cons">素有“北方柿子之乡”美名的保定，正面临着柿子滞销的窘境。项目组以柿子为原材料，酿制成了柿子酒......</p>
+                        <!-- <p>{{ info4 }}</p> -->
                     </div>
                     <a href="" id="pro4"></a>
                 </li>
@@ -83,11 +84,11 @@
 
         </div>
 
-        <div class="cd-fixed-bg cd-bg-2 item" id="information1" v-bind:style="styleObject">
+        <div class="cd-fixed-bg cd-bg-2 item" id="information1" v-bind:style="styleObject" v-bind:is="index">
             
         </div>
 
-        <div class="cd-scrolling-bg cd-color-2 item" id="information2">
+        <!-- <div class="cd-scrolling-bg cd-color-2 item" id="information2">
             <div class="cd-container">
                 <h1>content</h1>
                 <p>
@@ -95,46 +96,63 @@
                 </p>
                 
             </div>
-        </div>
-
+        </div> -->
+<!-- 
         <div class="cd-fixed-bg cd-bg-3"></div>
-        <div class="cd-fixed-bg cd-bg-4"></div>
+        <div class="cd-fixed-bg cd-bg-4"></div> -->
         <script>
-            let info1 = "绿色电力", info2 = "绿色鱼塘", info3 = "芦苇花开", info4 = "出柿入市";
+
+            let item2 = document.getElementById("item2");
+            let infor1 = document.getElementById("information1");
             
-            // var infoStyleObject = { backgroundImage: "image/1.jpg" }
-            var infoStyleObject = { backgroundImage:'url(\'image/1.jpg\')'}
+
+            let info1 = "绿色电力", info2 = "绿色鱼塘", info3 = "芦苇花开", info4 = "出柿入市";
+            function changeBackground(index){
+                 infor1.style.backgroundImage = "url('image/info/"+index+"')";
+                
+            }
+           // var infoStyleObject = { backgroundImage: "image/1.jpg" }
+            //let infoStyleObject = { backgroundImage:"url(\'image/1.jpg\')"};
             // let li1 = new Vue({
             //     el: '#item2',
             //     methods: {
             //         changeBack: function (event) {
-            //             infoStyleObject = { backgroundImage: "image/info/2.jpeg" }
-            //             alert('onmouseover')
+            //             infoStyleObject = { backgroundImage: "url(image/info/2.jpeg)" }
+            //             // alert('onmouseover')
             //         }
             //     }
             // })
             //li1.changeBack()
-            let briInfo = new Vue({
-                el: '#item2',
-                data: {
-                    info: info1,
-                    info2: info2,
-                    info3: info3,
-                    info4: info4
-                },
-                methods:{
-                    changeBack: function (event) {
-                        infoStyleObject = { backgroundImage: "url('/info/2.jpeg')" }
-                        //alert('onmouseover')image
-                    }
-                }
-            })
-            let information1 = new Vue({
-                el: "#information1",
-                data: {
-                    styleObject: infoStyleObject
-                }
-            })
+            // let information1 = new Vue({
+            //     el: "#information1",
+            //     data: {
+            //         styleObject: infoStyleObject
+            //     }
+            // })
+            // let briInfo = new Vue({
+            //     el: '#item2',
+            //     data: {
+            //         // info: info1,
+            //         // info2: info2,
+            //         // info3: info3,
+            //         // info4: info4
+            //     },
+            //     methods:{
+            //         changeBack: function (index) {
+            //             // if(index ===1){
+            //             //    infoStyleObject = "{backgroundImage:url(image/info/图片1.png)}";
+            //             // }else{
+            //             //    infoStyleObject = "{backgroundImage:url(image/info/"+index+".jpg)}";
+            //             // }
+            //             // information1.data ={styleObject:infoStyleObject} ;
+            //             let in1 = document.getElementById("information1");
+            //             // in1.setAttribute("style","background:(url('image/info/"+index+".jpg'))");
+            //             in1.style.backgroundImage = URL("image/info/"+index+".jpg");
+            //         }
+                    
+            //     }
+            // })
+            
         </script>
 </body>
 
